@@ -1,18 +1,3 @@
-# Reset Title Field On Sitecore Sxa Components
-
-After an update from Sitecore 10.2.0 to Sitecore 10.3.1 I figured out that the "Title" field of default SXA components have changed.
-
-They appeared in Experience Editor, especially in language versions other than *"en"*. I reported this as a bug *(CS0405766)* they answered to reset those fields manually on each component.
-
-![Components in Sitecore Experience Editor](https://github.com/monkey-dsc/ResetTitleFieldOnSitecoreSxaComponents/images/ComponentsInEE.png)
-
-But, I searched for that field and more than 60 components was affected! As lazy I am I created a Sitecore PowershellScript for that. 
-
-### Installation
-
-Just create an Item in your Sitecore Powershell Extensions Library, copy and paste the code below into it, save and execute.
-
-```
 $itemIds = @(
     "{668126E9-5A1E-4553-974B-A26400B5BAD7}",
     "{2147200A-CD2E-4196-91D5-E23C0724502D}", 
@@ -95,6 +80,3 @@ foreach ($itemId in $itemIds) {
     Get-Item -Path "master:" -ID $itemId -Version * -Language * | Reset-ItemField -Name 'Title'
     Write-Host ("The field 'Title' was resetted for the item ID {0}." -f $itemId)
 }
-```
-
-As I mentioned this may not happen for "en" language. ButI saw this will affect Dansk and all other languages as well.
