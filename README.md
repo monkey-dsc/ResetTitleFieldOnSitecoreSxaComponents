@@ -4,7 +4,7 @@ After an update from Sitecore 10.2.0 to Sitecore 10.3.1 I figured out that the "
 
 They appeared in Experience Editor, especially in language versions other than *"en"*. I reported this as a bug *(CS0405766)* they answered to reset those fields manually on each component.
 
-![Components in Sitecore Experience Editor](https://github.com/monkey-dsc/ResetTitleFieldOnSitecoreSxaComponents/images/ComponentsInEE.png)
+![Components in Sitecore Experience Editor](https://github.com/monkey-dsc/ResetTitleFieldOnSitecoreSxaComponents/blob/master/images/ComponentsInEE.png?raw=true)
 
 But, I searched for that field and more than 60 components was affected! As lazy I am I created a Sitecore PowershellScript for that. 
 
